@@ -23,7 +23,7 @@ const Story = () => {
       gap={2}
       sx={{
         overflowY: "hidden",
-        width: "100%",
+        maxWidth: "470px",
         p: 1.5,
         border: "1px solid #00000030",
       }}
@@ -33,8 +33,8 @@ const Story = () => {
           <Avatar
             src={user.picture.large}
             sx={{
-              width: "55px",
-              height: "55px",
+              width: "66px",
+              height: "66px",
               border: "3px solid transparent",
               outline: "3px solid #db0f31",
             }}

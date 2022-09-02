@@ -16,14 +16,15 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import FavoriteBorderOutlined from "@mui/icons-material/FavoriteBorderOutlined";
 import Favorite from "@mui/icons-material/Favorite";
-import { Box, Checkbox, Stack } from "@mui/material";
+import { Box, Checkbox, Container, Stack } from "@mui/material";
 import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 
 const PostCard = () => {
   return (
     <Card
-      sx={{ maxWidth: "100%", border: "1px solid #00000030" }}
+      sx={{ maxWidth: "470px", border: "1px solid #00000030" }}
       borderRadius={30}
+      height="567px"
     >
       <CardHeader
         avatar={

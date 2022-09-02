@@ -31,7 +31,7 @@ const Navbar = () => {
             src="https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png"
             alt="logo"
           />
-          <Stack direction="row">
+          <Stack direction="row" sx={{ display: { xs: "none", md: "flex" } }}>
             <Stack
               direction="row"
               alignItems="center"

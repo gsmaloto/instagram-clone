@@ -8,35 +8,28 @@ import {
   Typography,
   Divider,
 } from "@mui/material";
+import { Stack } from "@mui/system";
 import React from "react";
 
 const Friend = () => {
   return (
-    <Box sx={{ width: "100%", display: { xs: "none", sm: "block" } }}>
-      <Typography variant="body2" fontWeight="800" color="#00000080">
-        Suggestions For You
-      </Typography>
-      <List sx={{ width: "100%", maxWidth: 360 }}>
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            sx={{ fontSize: 1 }}
-            primary="john_doeee"
-            secondary={
-              <Typography
-                sx={{ display: "inline" }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                Follows you
-              </Typography>
-            }
-          />
-        </ListItem>
-      </List>
+    <Box sx={{ width: "319px" }}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Stack direction="row" gap={2} alignItems="center">
+          <Avatar />
+          <Box>
+            <Typography variant="body2" fontWeight="600">
+              jwasss_axx
+            </Typography>
+            <Typography variant="body2" sx={{ opacity: ".7" }}>
+              Follows you
+            </Typography>
+          </Box>
+        </Stack>
+        <Typography variant="body2" fontWeight="600" color="#0095f6">
+          Follow
+        </Typography>
+      </Stack>
     </Box>
   );
 };

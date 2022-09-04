@@ -8,8 +8,8 @@ import React from "react";
 
 const PostCard = ({ imageUrl }) => {
   return (
-    <div className="border-2 rounded bg-white">
-      <div className="flex px-4 my-2">
+    <div className="border-2 rounded bg-white dark:border-none py-4 dark:text-gray-100 dark:bg-[#1A1A1A]">
+      <div className="flex px-4 mb-4">
         <Avatar className="mr-2" />
         <div>
           <h3 className="text-sm sm:text-md font-semibold">gsmaloto</h3>
@@ -27,22 +27,22 @@ const PostCard = ({ imageUrl }) => {
           laborum in voluptatibus, a dicta rerum reiciendis velit quae alias
           facere optio! Laborum.
         </p>
-        <div className="space-x-4 my-2 border-t-2 pt-2">
+        <div className="space-x-4 my-2 border-t-2 dark:border-[#2E2E2E] pt-2">
           <FavoriteBorderOutlined className="cursor-pointer hover:text-gray-500" />
           <CommentOutlined className="cursor-pointer hover:text-gray-500" />
           <SendOutlined className="cursor-pointer hover:text-gray-500" />
         </div>
-        <p className="text-sm sm:text-md font-bold border-b-2 pb-2">
+        <p className="text-current text-sm sm:text-md font-bold border-b-2 dark:border-[#2E2E2E] pb-2">
           1,435 likes
         </p>
         <div className="flex items-center gap-2 mt-4">
           <Avatar sx={{ width: 32, height: 32 }} />
           <input
-            className="outline-none border-2 flex-grow text-sm sm:text-md px-2 placeholder:text-sm sm:placeholder:text-md max-w-full"
+            className="flex-auto input px-0 "
             type="text"
             placeholder="Add a comment..."
           />
-          <SendOutlined className="cursor-pointer" />
+          <SendOutlined className="cursor-pointer flex-none" />
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const dark = true;
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "unset";
   }, [open]);
@@ -23,10 +24,10 @@ const Navbar = () => {
       icon: <SendOutlinedIcon />,
       title: "Inbox",
     },
-    {
-      icon: <AddCircleOutlineOutlinedIcon />,
-      title: "Create Post",
-    },
+    // {
+    //   icon: <AddCircleOutlineOutlinedIcon />,
+    //   title: "Create Post",
+    // },
     {
       icon: <ExploreOutlinedIcon />,
       title: "Explore",
@@ -38,11 +39,15 @@ const Navbar = () => {
   ];
   return (
     <>
-      <nav className="border-b-2 sticky top-0 z-50 bg-white w-full">
+      <nav className="border-b-2 dark:border-transparent sticky top-0 z-50 bg-white dark:bg-[#1A1A1A] w-full">
         <div className="flex items-center justify-between h-[60px] w-full sm:max-w-[1000px] px-2  md:mx-4 lg:mx-auto">
           <img
             className="h-8"
-            src="https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png"
+            src={
+              dark
+                ? "https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
+                : "https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png"
+            }
             alt=""
           />
 
@@ -52,11 +57,11 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search"
-                className="outline-none bg-[#efefef] px-6 py-1 active:outline-0"
+                className="outline-none dark:text-gray-100 dark:placeholder:text-gray-500 bg-[#efefef] dark:bg-[#2e2e2e] px-6 py-1 active:outline-0"
               />
             </div>
             {navLInks.map(({ icon }, index) => (
-              <li key={index} className="cursor-pointer">
+              <li key={index} className="cursor-pointer dark:text-gray-100">
                 {icon}
               </li>
             ))}
@@ -95,12 +100,12 @@ const Navbar = () => {
       </nav>
       {/* overlay */}
       {open && (
-        <div className="overflow-hidden sm:hidden fixed top-0 left-0 bg-[#00000060] w-full h-full z-50" />
+        <div className="overflow-hidden fixed top-0 left-0 bg-[#00000060] w-full h-full z-50" />
       )}
 
       {/* menu */}
       <nav
-        className={`sm:hidden fixed w-52 bg-white top-0  h-full z-50 duration-300 ease-in-out ${
+        className={`fixed w-52 bg-white top-0  h-full z-50 duration-300 ease-in-out ${
           open ? "right-0" : "-right-full"
         }`}
       >

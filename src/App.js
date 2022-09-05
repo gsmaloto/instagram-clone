@@ -9,9 +9,7 @@ function App() {
   // console.log(typeof localStorage.getItem("theme"), typeof darkMode);
   return (
     <div
-      className={`${
-        darkMode ? "dark " : ""
-      } transition-opacity transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) transition-duration: 150ms`}
+      className={`${darkMode ? "dark " : ""} transition-colors duration-300`}
     >
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Feed />

@@ -10,7 +10,7 @@ const AddPost = () => {
       </div>
       <form className="flex w-full" onSubmit={(e) => e.preventDefault()}>
         <input
-          className="flex-1 mr-2 dark:placeholder:text-gray-500 bg-[#efefef] dark:bg-[#2e2e2e]  dark:text-gray-200 px-2 py-4 rounded-lg outline-none"
+          className="flex-1 mr-2 dark:placeholder:text-gray-500 bg-[#efefef] dark:bg-[#2e2e2e]  dark:text-gray-200 px-2 py-2 sm:py-4 rounded-lg outline-none"
           type="text"
           placeholder="What's on your mind?"
         />

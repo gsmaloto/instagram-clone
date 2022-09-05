@@ -3,7 +3,7 @@ import React from "react";
 
 const Suggestion = () => {
   return (
-    <div className="w-full">
+    <div className="w-full dark:text-gray-100">
       <h3 className="text-gray-400 dark:text-white-500 font-semibold mb-4">
         Suggestions for you
       </h3>
@@ -12,7 +12,7 @@ const Suggestion = () => {
           <Avatar />
         </div>
         <div>
-          <h4 className="font-semibold dark:text-gray-100">john_doe</h4>
+          <h4 className="font-semibold ">john_doe</h4>
           <p className="text-sm text-gray-400">Follows you</p>
         </div>
       </div>

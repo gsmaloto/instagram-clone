@@ -5,7 +5,7 @@ import Story from "./Story";
 import Suggestion from "./Suggestion";
 
 const Feed = () => (
-  <div className="bg-[#fafafa] dark:bg-black pt-4 mx-2 md:mx-0">
+  <div className="bg-[#fafafa] dark:bg-black pt-4 px-2 md:mx-0">
     {/* container */}
     <div className="max-w-[800px] sm:mx-auto">
       {/* grid */}

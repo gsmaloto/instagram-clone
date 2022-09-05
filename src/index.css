@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .input {
-  @apply outline-none dark:text-gray-100 dark:placeholder:text-gray-500 bg-[#efefef] dark:bg-[#2e2e2e] px-2 py-1 active:outline-0;
+  @apply outline-none dark:text-gray-100 dark:placeholder:text-gray-500 bg-[#efefef] dark:bg-[#2e2e2e]  py-1 active:outline-0;
 }

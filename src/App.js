@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("darkMode") ? true : false
+    localStorage.getItem("darkMode") == "true" ? true : false
   );
   // console.log(typeof localStorage.getItem("theme"), typeof darkMode);
   return (

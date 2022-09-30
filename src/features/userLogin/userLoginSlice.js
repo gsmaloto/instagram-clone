@@ -13,10 +13,10 @@ export const userLoginSlice = createSlice({
   reducers: {
     login: (state, actions) => {
       return (state = {
-        id: actions.payload,
-        username: actions.payload,
-        password: actions.payload,
-        profilePic: actions.payload,
+        id: actions.payload.id,
+        username: actions.payload.username,
+        password: actions.payload.password,
+        profilePic: actions.payload.profilePic,
       });
     },
     logout: (state) => {

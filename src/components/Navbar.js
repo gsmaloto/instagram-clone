@@ -21,7 +21,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   }, [open]);
 
   const userLogged = useSelector((state) => state.userLogin);
-  console.log(userLogged.profilePic);
   const dispatch = useDispatch();
 
   const handleLogout = () => dispatch(logout());
@@ -94,6 +93,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               />
               {showMenu && (
                 <div className="absolute right-0 p-4 space-y-2 text-sm bg-gray-800">
+                  <h4>{userLogged.username}</h4>
                   <div className="flex items-center gap-2 cursor-pointer">
                     <FaRegUserCircle />
                     <p>Profile</p>

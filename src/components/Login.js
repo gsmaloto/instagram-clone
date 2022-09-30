@@ -10,18 +10,24 @@ const Login = () => {
   const dispatch = useDispatch();
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPassowrdInput] = useState("");
+  const [error, setError] = useState(false);
+
+  const userValid = userData.find(
+    (user) => user.username === usernameInput && user.password === passwordInput
+  );
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    dispatch(
-      login({
-        id: user.id,
-        username: user.username,
-        password: user.password,
-        profilePic: user.profilePic,
-      })
-    );
+    userValid
+      ? dispatch(
+          login({
+            id: userValid.id,
+            username: userValid.username,
+            password: userValid.password,
+            profilePic: userValid.profilePic,
+          })
+        )
+      : setError(true);
   };
   return (
     <div className="bg-[#fafafa] w-screen text-center min-h-screen flex items-center justify-center flex-col">
@@ -55,19 +61,25 @@ const Login = () => {
           >
             Log In
           </button>
-          <div className="relative flex justify-center py-4">
-            <p className="z-10 px-4 bg-white">OR</p>
-            <hr className="absolute w-3/4 h-[1px] bottom-1/2 bg-red-400" />
-          </div>
-          <div>
-            <img src="" alt="" />
-            <h4 className="flex items-center justify-center gap-2 font-semibold text-md">
-              <RiFacebookBoxFill className="text-2xl text-blue-700" />
-              Log In with Facebook
-            </h4>
-          </div>
-          <p className="py-4 text-sm">forgot Password?</p>
         </form>
+        <div className="relative flex justify-center py-4">
+          <p className="z-10 px-4 bg-white">OR</p>
+          <hr className="absolute w-3/4 h-[1px] bottom-1/2 bg-red-400" />
+        </div>
+        <div>
+          <img src="" alt="" />
+          <h4 className="flex items-center justify-center gap-2 font-semibold text-md">
+            <RiFacebookBoxFill className="text-2xl text-blue-700" />
+            Log in with Facebook
+          </h4>
+          {error && (
+            <p className="mx-8 mt-2 text-center text-red-500">
+              The username you entered doesn't belong to an account. Please
+              check your username and try again.
+            </p>
+          )}
+        </div>
+        <p className="py-4 text-sm">forgot Password?</p>
       </div>
       <div className="bg-white border-2 w-[400px] mt-4">
         <h4 className="py-4 text-sm">

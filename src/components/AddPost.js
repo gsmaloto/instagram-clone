@@ -5,7 +5,7 @@ import React from "react";
 const AddPost = () => {
   return (
     <div className="flex items-center w-full rounded bg-white dark:bg-[#1A1A1A] border-2 dark:border-none p-4">
-      <div className="mr-4">
+      <div className="mr-2">
         <Avatar />
       </div>
       <form className="flex w-full" onSubmit={(e) => e.preventDefault()}>

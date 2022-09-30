@@ -11,14 +11,14 @@ const Feed = () => (
       {/* grid */}
       <div className="grid grid-cols-12 gap-4">
         {/* grid item */}
-        <div className="sm:col-span-8 col-span-12">
+        <div className="col-span-12 sm:col-span-8">
           <div className="mb-4">
             <Story />
           </div>
           <div className="mb-4">
             <AddPost />
           </div>
-          <div className="space-y-3 mb-4">
+          <div className="mb-4 space-y-3">
             {/* imageUrl, profilePicUrl, caption, likes */}
             <PostCard
               profilePicUrl="https://assets.entrepreneur.com/content/3x2/2000/1651673015-shutterstock-2098527055.jpg"

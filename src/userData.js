@@ -1,6 +1,8 @@
 const userData = [
   {
     id: 1,
+    fname: "John",
+    lname: "Doe",
     username: "username1",
     password: "password1",
     profilePic:
@@ -8,12 +10,16 @@ const userData = [
   },
   {
     id: 2,
+    fname: "Baba",
+    lname: "Lu",
     username: "username2",
     password: "password2",
     profilePic: "https://www.w3schools.com/w3images/avatar2.png",
   },
   {
     id: 3,
+    fname: "Louise",
+    lname: "Sy",
     username: "username3",
     password: "password3",
     profilePic: "https://www.w3schools.com/w3images/avatar6.png",

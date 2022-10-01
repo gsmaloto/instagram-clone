@@ -22,6 +22,8 @@ const Login = () => {
       ? dispatch(
           login({
             id: userValid.id,
+            fname: userValid.fname,
+            lname: userValid.lname,
             username: userValid.username,
             password: userValid.password,
             profilePic: userValid.profilePic,

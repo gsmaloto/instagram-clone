@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../features/userLogin/userLoginSlice";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [open, setOpen] = useState(false);
@@ -52,15 +53,17 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       <nav className="border-b-2 dark:border-transparent sticky top-0 z-50 bg-white dark:text-gray-100 dark:bg-[#1A1A1A] w-full">
         <div className="flex items-center justify-between h-[60px] w-full sm:max-w-[1000px] px-2 mx-auto">
           <div className="flex gap-2">
-            <img
-              className="h-8"
-              src={
-                darkMode
-                  ? "https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
-                  : "https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png"
-              }
-              alt=""
-            />
+            <Link to="/">
+              <img
+                className="h-8"
+                src={
+                  darkMode
+                    ? "https://www.pngkey.com/png/full/828-8286178_mackeys-work-needs-no-elaborate-presentation-or-distracting.png"
+                    : "https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png"
+                }
+                alt=""
+              />
+            </Link>
             <div
               className="cursor-pointer"
               onClick={() => {

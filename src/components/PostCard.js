@@ -6,29 +6,30 @@ import {
 import { Avatar } from "@mui/material";
 import React from "react";
 
-const PostCard = ({
-  imageUrl,
-  username,
-  time,
-  profilePicUrl,
-  caption,
-  likes,
-}) => {
+const PostCard = ({ postDetails }) => {
   return (
     <div className="border-2 rounded bg-white dark:border-none py-4 dark:text-gray-100 dark:bg-[#1A1A1A]">
       <div className="flex px-2 mb-4 sm:px-4">
-        <Avatar className="mr-2" src={profilePicUrl} />
+        <Avatar className="mr-2" src={`${postDetails.profilePicUrl}`} />
         <div>
-          <h3 className="text-sm font-semibold sm:text-md">{username}</h3>
-          <p className="text-xs text-gray-500 sm:text-sm">{time} ago</p>
+          <h3 className="text-sm font-semibold sm:text-md">
+            {postDetails.username}
+          </h3>
+          <p className="text-xs text-gray-500 sm:text-sm">
+            {postDetails.time} ago
+          </p>
         </div>
       </div>
       <div className="flex justify-center dark:bg-[#0d0d0d] bg-gray-50">
-        <img className="object-contain max-h-[400px]" src={imageUrl} alt="" />
+        <img
+          className="object-contain max-h-[400px]"
+          src={postDetails.imageUrl}
+          alt=""
+        />
       </div>
       <div className="mx-2 mb-4 sm:mx-4">
         <p className="w-auto my-4 text-sm sm:text-md overflow-ellipsis">
-          {caption}
+          {postDetails.caption}
         </p>
         <div className="space-x-4 my-2 border-t-2 dark:border-[#2E2E2E] pt-2">
           <FavoriteBorderOutlined className="cursor-pointer hover:text-gray-500" />
@@ -36,7 +37,7 @@ const PostCard = ({
           <SendOutlined className="cursor-pointer hover:text-gray-500" />
         </div>
         <p className="text-current text-sm sm:text-md font-bold border-b-2 dark:border-[#2E2E2E] pb-2">
-          {likes ? `${likes} likes` : "0 like"}
+          {postDetails.likes ? `${postDetails.likes} likes` : "0 like"}
         </p>
         <div className="flex items-center gap-2 mt-4">
           <Avatar sx={{ width: 32, height: 32 }} />

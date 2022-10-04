@@ -3,7 +3,8 @@ import Feed from "./components/Feed";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
-import { Routes, Route } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
+import { Routes, Route, json } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
     localStorage.getItem("darkMode") == "true" ? true : false
   );
   const userLogged = useSelector((state) => state.userLogin);
+
+  console.log("userLogged ", userLogged);
 
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
@@ -22,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Feed />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </>
       )}

@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "../features/userLogin/userLoginSlice";
-import userData from "../userData";
+import { userData } from "../userData";
 const Login = () => {
   const userLogged = useSelector((state) => state.userLogin);
   const dispatch = useDispatch();
@@ -18,22 +18,18 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    userValid
-      ? dispatch(
-          login({
-            id: userValid.id,
-            fname: userValid.fname,
-            lname: userValid.lname,
-            username: userValid.username,
-            password: userValid.password,
-            profilePic: userValid.profilePic,
-          })
-        )
-      : setError(true);
+    if (userValid) {
+      dispatch(login(userValid));
+      localStorage.setItem("userLogged", JSON.stringify(userValid));
+    } else {
+      setError(true);
+    }
+
+    console.log("localstorage", localStorage.getItem("userLogged"));
   };
   return (
-    <div className="bg-[#fafafa] w-screen text-center min-h-screen flex items-center justify-center flex-col">
-      <div className="flex flex-col justify-center  w-[400px] bg-white border-2">
+    <div className="bg-[#fafafa] dark:bg-black dark:text-white w-screen text-center min-h-screen flex items-center justify-center flex-col">
+      <div className="flex flex-col justify-center dark:bg-[#1A1A1A] w-[400px] bg-white border-2 border-[#1A1A1A]">
         <img
           src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png"
           alt=""
@@ -46,13 +42,13 @@ const Login = () => {
               value={usernameInput}
               type="text"
               placeholder="Phone number, username or email"
-              className="border-[1px] border-gray-300 focus:outline-gray-400 bg-[#fafafa] py-1 px-2 text-sm rounded-sm w-3/4"
+              className="border-[1px] dark:text-black border-gray-300 focus:outline-gray-400 bg-[#fafafa] py-1 px-2 text-sm rounded-sm w-3/4"
             />
             <input
               onChange={(e) => setPassowrdInput(e.target.value)}
               value={passwordInput}
               type="text"
-              className="border-[1px] border-gray-300 focus:outline-gray-400 bg-[#fafafa] py-1 px-2 text-sm rounded-sm w-3/4"
+              className="border-[1px] dark:text-black border-gray-300 focus:outline-gray-400 bg-[#fafafa] py-1 px-2 text-sm rounded-sm w-3/4"
               placeholder="Password"
             />
           </div>
@@ -65,7 +61,7 @@ const Login = () => {
           </button>
         </form>
         <div className="relative flex justify-center py-4">
-          <p className="z-10 px-4 bg-white">OR</p>
+          <p className="z-10 px-4 bg-white dark:bg-[#1A1A1A]">OR</p>
           <hr className="absolute w-3/4 h-[1px] bottom-1/2 bg-red-400" />
         </div>
         <div>
@@ -83,7 +79,7 @@ const Login = () => {
         </div>
         <p className="py-4 text-sm">forgot Password?</p>
       </div>
-      <div className="bg-white border-2 w-[400px] mt-4">
+      <div className="bg-white  dark:bg-[#1A1A1A] border-2 border-[#1A1A1A]  w-[400px] mt-4">
         <h4 className="py-4 text-sm">
           Don't have an account?
           <a className="font-semibold text-blue-500"> Sign Up</a>

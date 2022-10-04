@@ -12,19 +12,26 @@ import React, { useEffect, useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../features/userLogin/userLoginSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { userData } from "../userData";
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [open, setOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const { profilePic } = userData;
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "unset";
   }, [open]);
 
   const userLogged = useSelector((state) => state.userLogin);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleLogout = () => dispatch(logout());
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem("userLogged");
+    navigate("/");
+  };
 
   const navLInks = [
     {
@@ -92,7 +99,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 alt="Remy Sharp"
                 sx={{ width: 24, height: 24 }}
                 src={userLogged?.profilePic}
-                onClick={() => setShowMenu(true)}
+                onClick={() => setShowMenu(!showMenu)}
               />
               {showMenu && (
                 <div className="absolute right-0 p-4 space-y-2 text-sm bg-gray-800">
